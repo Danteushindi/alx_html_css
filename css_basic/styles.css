@@ -24,3 +24,9 @@ aside {
 	overflow-y: auto;
 }
 
+p.logo {
+	font-family: font-family: 'Josefin Sans', serif;
+	font-weight: bold;
+	font-size: 30px;
+	color: red;
+}
