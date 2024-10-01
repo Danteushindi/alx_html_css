@@ -8,14 +8,25 @@
     <link rel="stylesheet" type="text/css" href="0-styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <img src="./images/logo_headphones.png" alt="logo">
-            <ul>
-                <li><a href="#">what we do</a></li>
-                <li><a href="#">our results</a></li>
-                <li><a href="#">contact us</a></li>
+    <header class="header">
+        <nav clas="navbar">
+            <a href="#" class="nav-logo"><img src="./images/logo_headphones.png" alt="logo"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">what we do</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">our results</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">contact us</a>
+                </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
     <main>
@@ -34,5 +45,25 @@
                 </center>
             </div>
         </section>
+        <script type="text/javascript">
+           const hamburger = document.querySelector(".hamburger");
+           const navMenu = document.querySelector(".nav-menu");
+
+           hamburger.addEventListener("click", mobileMenu);
+
+           function mobileMenu() {
+               hamburger.classList.toggle("active");
+               navMenu.classList.toggle("active");
+           }
+
+           const navLink = document.querySelectorAll(".nav-link");
+
+           navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+           function closeMenu() {
+               hamburger.classList.remove("active");
+               navMenu.classList.remove("active");
+           }
+        </script>
 </body>
 </html>
